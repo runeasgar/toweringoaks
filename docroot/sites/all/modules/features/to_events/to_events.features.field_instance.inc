@@ -94,7 +94,7 @@ function to_events_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -140,7 +140,7 @@ function to_events_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -233,7 +233,7 @@ function to_events_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -274,7 +274,7 @@ function to_events_field_default_field_instances() {
       'module' => 'location_cck',
       'settings' => array(),
       'type' => 'location',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -335,6 +335,48 @@ function to_events_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_user'
+  $field_instances['node-event-field_user'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If the event takes place at a subdivision residence, select the resident that is hosting.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_user',
+    'label' => 'House',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Attachments');
@@ -342,6 +384,8 @@ function to_events_field_default_field_instances() {
   t('Body');
   t('Comment');
   t('Documents');
+  t('House');
+  t('If the event takes place at a subdivision residence, select the resident that is hosting.');
   t('If this event is not taking place at a subdivision residence, you may enter its location information here.');
   t('If turned on, this event will notify the entire subdivision.');
   t('If you would like to attach any site documents to this event, type their name(s) here.');

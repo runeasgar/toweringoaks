@@ -25,4 +25,5 @@ features[field_base][] = field_images
 features[field_base][] = field_location
 features[field_base][] = field_schedule
 features[field_base][] = field_schedule_with_time
+features[field_base][] = field_user
 features[field_base][] = field_users
