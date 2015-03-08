@@ -1,18 +1,18 @@
 <?php
 /**
  * @file
- * to_announcements.features.field_instance.inc
+ * to_events.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function to_announcements_field_default_field_instances() {
+function to_events_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_announcement-comment_body'
-  $field_instances['comment-comment_node_announcement-comment_body'] = array(
-    'bundle' => 'comment_node_announcement',
+  // Exported field_instance: 'comment-comment_node_event-comment_body'
+  $field_instances['comment-comment_node_event-comment_body'] = array(
+    'bundle' => 'comment_node_event',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -47,9 +47,9 @@ function to_announcements_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-announcement-body'
-  $field_instances['node-announcement-body'] = array(
-    'bundle' => 'announcement',
+  // Exported field_instance: 'node-event-body'
+  $field_instances['node-event-body'] = array(
+    'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -94,15 +94,15 @@ function to_announcements_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'node-announcement-field_attachments'
-  $field_instances['node-announcement-field_attachments'] = array(
-    'bundle' => 'announcement',
+  // Exported field_instance: 'node-event-field_attachments'
+  $field_instances['node-event-field_attachments'] = array(
+    'bundle' => 'event',
     'deleted' => 0,
-    'description' => 'Upload any files that you\'d like to have attached to this announcement.',
+    'description' => 'Upload any files that you\'d like to have attached to this event.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -113,7 +113,7 @@ function to_announcements_field_default_field_instances() {
           ),
         ),
         'type' => 'file_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -128,7 +128,7 @@ function to_announcements_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'description_field' => 1,
-      'file_directory' => 'announcements/attachments',
+      'file_directory' => 'events/attachments',
       'file_extensions' => 'txt rtf doc docx xls xlsx pdf csv jpg jpeg gif png ppt pptx pps',
       'max_filesize' => '10 MB',
       'user_register_form' => FALSE,
@@ -140,20 +140,20 @@ function to_announcements_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-announcement-field_critical'
-  $field_instances['node-announcement-field_critical'] = array(
-    'bundle' => 'announcement',
+  // Exported field_instance: 'node-event-field_attendance_recommended'
+  $field_instances['node-event-field_attendance_recommended'] = array(
+    'bundle' => 'event',
     'default_value' => array(
       0 => array(
         'value' => 0,
       ),
     ),
     'deleted' => 0,
-    'description' => 'If turned on, this announcement will notify the entire subdivision and be displayed prominently across the entire site.',
+    'description' => 'If turned on, this event will notify the entire subdivision.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -164,7 +164,7 @@ function to_announcements_field_default_field_instances() {
           ),
         ),
         'type' => 'list_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -174,8 +174,8 @@ function to_announcements_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_critical',
-    'label' => 'Critical',
+    'field_name' => 'field_attendance_recommended',
+    'label' => 'Attendance Recommended',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -191,14 +191,57 @@ function to_announcements_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_location'
+  $field_instances['node-event-field_location'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If this event is not taking place at a subdivision residence, you may enter its location information here.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'location_cck',
+        'settings' => array(
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'location_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_location',
+    'label' => 'Location',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'location_cck',
+      'settings' => array(),
+      'type' => 'location',
+      'weight' => 2,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Attachments');
+  t('Attendance Recommended');
   t('Body');
   t('Comment');
-  t('Critical');
-  t('If turned on, this announcement will notify the entire subdivision and be displayed prominently across the entire site.');
-  t('Upload any files that you\'d like to have attached to this announcement.');
+  t('If this event is not taking place at a subdivision residence, you may enter its location information here.');
+  t('If turned on, this event will notify the entire subdivision.');
+  t('Location');
+  t('Upload any files that you\'d like to have attached to this event.');
 
   return $field_instances;
 }
