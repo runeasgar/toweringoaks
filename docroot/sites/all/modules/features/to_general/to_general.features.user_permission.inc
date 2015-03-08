@@ -405,6 +405,28 @@ function to_general_user_default_permissions() {
     'module' => 'search',
   );
 
+  // Exported permission: 'use text format filtered_html'.
+  $permissions['use text format filtered_html'] = array(
+    'name' => 'use text format filtered_html',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'board member' => 'board member',
+      'hoa member' => 'hoa member',
+      'resident' => 'resident',
+    ),
+    'module' => 'filter',
+  );
+
+  // Exported permission: 'use text format full_html'.
+  $permissions['use text format full_html'] = array(
+    'name' => 'use text format full_html',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'board member' => 'board member',
+    ),
+    'module' => 'filter',
+  );
+
   // Exported permission: 'view ember support mods'.
   $permissions['view ember support mods'] = array(
     'name' => 'view ember support mods',
