@@ -94,7 +94,7 @@ function to_announcements_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -140,7 +140,7 @@ function to_announcements_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -191,13 +191,61 @@ function to_announcements_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-announcement-field_documents'
+  $field_instances['node-announcement-field_documents'] = array(
+    'bundle' => 'announcement',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If you would like to attach any site documents to this announcement, type their name(s) here.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_documents',
+    'label' => 'Documents',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 2,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Attachments');
   t('Body');
   t('Comment');
   t('Critical');
+  t('Documents');
   t('If turned on, this announcement will notify the entire subdivision and be displayed prominently across the entire site.');
+  t('If you would like to attach any site documents to this announcement, type their name(s) here.');
   t('Upload any files that you\'d like to have attached to this announcement.');
 
   return $field_instances;

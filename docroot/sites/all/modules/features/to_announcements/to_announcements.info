@@ -18,6 +18,7 @@ features[field_instance][] = comment-comment_node_announcement-comment_body
 features[field_instance][] = node-announcement-body
 features[field_instance][] = node-announcement-field_attachments
 features[field_instance][] = node-announcement-field_critical
+features[field_instance][] = node-announcement-field_documents
 features[node][] = announcement
 features[variable][] = comment_announcement
 features[variable][] = comment_anonymous_announcement

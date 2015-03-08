@@ -20,6 +20,7 @@ features[field_instance][] = comment-comment_node_event-comment_body
 features[field_instance][] = node-event-body
 features[field_instance][] = node-event-field_attachments
 features[field_instance][] = node-event-field_attendance_recommended
+features[field_instance][] = node-event-field_documents
 features[field_instance][] = node-event-field_location
 features[node][] = event
 features[variable][] = comment_anonymous_event

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the TO Documents feature.
+ */
+
+include_once 'to_documents.features.inc';

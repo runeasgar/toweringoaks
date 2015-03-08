@@ -94,7 +94,7 @@ function to_events_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -191,6 +191,52 @@ function to_events_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_documents'
+  $field_instances['node-event-field_documents'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If you would like to attach any site documents to this event, type their name(s) here.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_documents',
+    'label' => 'Documents',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_location'
   $field_instances['node-event-field_location'] = array(
     'bundle' => 'event',
@@ -228,7 +274,7 @@ function to_events_field_default_field_instances() {
       'module' => 'location_cck',
       'settings' => array(),
       'type' => 'location',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -238,8 +284,10 @@ function to_events_field_default_field_instances() {
   t('Attendance Recommended');
   t('Body');
   t('Comment');
+  t('Documents');
   t('If this event is not taking place at a subdivision residence, you may enter its location information here.');
   t('If turned on, this event will notify the entire subdivision.');
+  t('If you would like to attach any site documents to this event, type their name(s) here.');
   t('Location');
   t('Upload any files that you\'d like to have attached to this event.');
 
