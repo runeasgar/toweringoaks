@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the TO Suggestions feature.
+ */
+
+include_once 'to_suggestions.features.inc';
