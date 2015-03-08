@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the TO Announcements feature.
+ */
+
+include_once 'to_announcements.features.inc';

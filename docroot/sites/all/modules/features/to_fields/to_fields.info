@@ -1,0 +1,15 @@
+name = TO Fields
+description = Shared fields used on Towering Oaks.
+core = 7.x
+package = Towering Oaks
+version = 7.x-1.0
+project = to_fields
+dependencies[] = features
+dependencies[] = file
+dependencies[] = list
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = body
+features[field_base][] = comment_body
+features[field_base][] = field_attachments
+features[field_base][] = field_critical
