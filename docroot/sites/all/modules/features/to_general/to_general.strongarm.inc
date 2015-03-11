@@ -133,7 +133,7 @@ function to_general_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_mail';
-  $strongarm->value = 'rpgplayer1@yahoo.com';
+  $strongarm->value = 'joshuataylo1@joshuataylo1dev.prod.acquia-sites.com';
   $export['site_mail'] = $strongarm;
 
   $strongarm = new stdClass();

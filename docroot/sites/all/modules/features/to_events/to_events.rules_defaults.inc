@@ -22,7 +22,7 @@ function to_events_default_rules_configuration() {
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "4" : "4", "5" : "5", "6" : "6" } },
             "subject" : "Your Attendance is recommended for this Towering Oaks event: [node:title]",
-            "message" : "[node:title]\\r\\n\\r\\nPosted by [node:author] at [node:created]\\r\\nDate \\u0026 Time: [node:field-schedule-with-time]\\r\\nLocation: [node:field-user]\\r\\n[node:field_location]\\r\\n\\r\\n[node:body]\\r\\n\\r\\nYou can view this event and RSVP at: [node:url]\\r\\n\\r\\nThis message was sent by the [site:name] website at [site:url]"
+            "message" : "[node:title]\\r\\n\\r\\nPosted by [node:author] at [node:created]\\r\\n\\r\\n[node:body]\\r\\n\\r\\nYou can view this event and RSVP at: [node:url]\\r\\n\\r\\nThis message was sent by the [site:name] website at [site:url]"
           }
         }
       ]
