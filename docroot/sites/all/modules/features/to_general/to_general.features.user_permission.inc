@@ -133,6 +133,16 @@ function to_general_user_default_permissions() {
     'module' => 'comment',
   );
 
+  // Exported permission: 'administer redirects'.
+  $permissions['administer redirects'] = array(
+    'name' => 'administer redirects',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'board member' => 'board member',
+    ),
+    'module' => 'redirect',
+  );
+
   // Exported permission: 'administer users'.
   $permissions['administer users'] = array(
     'name' => 'administer users',
