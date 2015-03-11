@@ -10,6 +10,26 @@
 function to_events_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'administer own events registration'.
+  $permissions['administer own events registration'] = array(
+    'name' => 'administer own events registration',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'board member' => 'board member',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: 'administer registration'.
+  $permissions['administer registration'] = array(
+    'name' => 'administer registration',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'board member' => 'board member',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: 'create event content'.
   $permissions['create event content'] = array(
     'name' => 'create event content',
@@ -20,6 +40,18 @@ function to_events_user_default_permissions() {
       'resident' => 'resident',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'create events registration'.
+  $permissions['create events registration'] = array(
+    'name' => 'create events registration',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'board member' => 'board member',
+      'hoa member' => 'hoa member',
+      'resident' => 'resident',
+    ),
+    'module' => 'registration',
   );
 
   // Exported permission: 'delete any event content'.
@@ -64,6 +96,18 @@ function to_events_user_default_permissions() {
       'resident' => 'resident',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'view events registration'.
+  $permissions['view events registration'] = array(
+    'name' => 'view events registration',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'board member' => 'board member',
+      'hoa member' => 'hoa member',
+      'resident' => 'resident',
+    ),
+    'module' => 'registration',
   );
 
   return $permissions;

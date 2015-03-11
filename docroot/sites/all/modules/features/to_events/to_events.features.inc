@@ -30,3 +30,19 @@ function to_events_node_info() {
   drupal_alter('node_info', $items);
   return $items;
 }
+
+/**
+ * Implements hook_default_registration_type().
+ */
+function to_events_default_registration_type() {
+  $items = array();
+  $items['events'] = entity_import('registration_type', '{
+    "name" : "events",
+    "label" : "Events",
+    "locked" : "0",
+    "weight" : "0",
+    "data" : null,
+    "rdf_mapping" : []
+  }');
+  return $items;
+}

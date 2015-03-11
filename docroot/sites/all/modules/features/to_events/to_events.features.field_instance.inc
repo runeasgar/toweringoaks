@@ -278,6 +278,73 @@ function to_events_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_register'
+  $field_instances['node-event-field_register'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'registration_type' => 'events',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'registration',
+        'settings' => array(
+          'label' => ' ',
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'registration_default',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_register',
+    'label' => 'Register',
+    'required' => 0,
+    'settings' => array(
+      'default_registration_settings' => array(
+        'capacity' => 0,
+        'reminder' => array(
+          'reminder_settings' => array(
+            'reminder_date' => NULL,
+            'reminder_template' => '',
+          ),
+          'send_reminder' => 0,
+        ),
+        'scheduling' => array(
+          'close' => NULL,
+          'open' => NULL,
+        ),
+        'settings' => array(
+          'confirmation' => 'Registration has been saved.',
+          'from_address' => 'rpgplayer1@yahoo.com',
+          'maximum_spaces' => 1,
+          'multiple_registrations' => 0,
+        ),
+        'status' => 1,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'registration',
+      'settings' => array(),
+      'type' => 'registration_select',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_schedule_with_time'
   $field_instances['node-event-field_schedule_with_time'] = array(
     'bundle' => 'event',
@@ -390,6 +457,7 @@ function to_events_field_default_field_instances() {
   t('If turned on, this event will notify the entire subdivision.');
   t('If you would like to attach any site documents to this event, type their name(s) here.');
   t('Location');
+  t('Register');
   t('Schedule');
   t('Upload any files that you\'d like to have attached to this event.');
 
