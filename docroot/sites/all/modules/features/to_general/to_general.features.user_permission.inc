@@ -10,6 +10,15 @@
 function to_general_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'access administration pages'.
+  $permissions['access administration pages'] = array(
+    'name' => 'access administration pages',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'system',
+  );
+
   // Exported permission: 'access all webform results'.
   $permissions['access all webform results'] = array(
     'name' => 'access all webform results',
