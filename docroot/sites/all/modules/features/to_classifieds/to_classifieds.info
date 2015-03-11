@@ -46,3 +46,4 @@ features[variable][] = menu_parent_classified
 features[variable][] = node_options_classified
 features[variable][] = node_preview_classified
 features[variable][] = node_submitted_classified
+features[variable][] = pathauto_node_classified_pattern

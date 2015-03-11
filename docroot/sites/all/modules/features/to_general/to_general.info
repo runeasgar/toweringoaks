@@ -118,6 +118,7 @@ features[variable][] = date_first_day
 features[variable][] = date_format_long
 features[variable][] = date_format_medium
 features[variable][] = date_format_short
+features[variable][] = pathauto_node_page_pattern
 features[variable][] = simple_fb_connect_appid
 features[variable][] = simple_fb_connect_login_only
 features[variable][] = simple_fb_connect_post_login_url

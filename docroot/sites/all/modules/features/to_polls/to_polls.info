@@ -1,0 +1,11 @@
+name = TO Polls
+description = Poll the subdivision.
+core = 7.x
+package = Towering Oaks
+version = 7.x-1.0
+project = to_polls
+dependencies[] = ctools
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = pathauto_node_poll_pattern

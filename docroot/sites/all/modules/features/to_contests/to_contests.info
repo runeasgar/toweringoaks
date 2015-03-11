@@ -37,3 +37,4 @@ features[variable][] = menu_parent_contest
 features[variable][] = node_options_contest
 features[variable][] = node_preview_contest
 features[variable][] = node_submitted_contest
+features[variable][] = pathauto_node_contest_pattern

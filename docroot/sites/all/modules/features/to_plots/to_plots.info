@@ -34,3 +34,4 @@ features[variable][] = menu_parent_plot
 features[variable][] = node_options_plot
 features[variable][] = node_preview_plot
 features[variable][] = node_submitted_plot
+features[variable][] = pathauto_node_plot_pattern

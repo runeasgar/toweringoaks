@@ -38,3 +38,4 @@ features[variable][] = menu_parent_suggestion
 features[variable][] = node_options_suggestion
 features[variable][] = node_preview_suggestion
 features[variable][] = node_submitted_suggestion
+features[variable][] = pathauto_node_suggestion_pattern
