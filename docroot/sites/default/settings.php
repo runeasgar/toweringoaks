@@ -583,7 +583,8 @@ if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
   $conf['file_private_path'] = '/Users/joshua.taylor/Sites/devdesktop/private/joshuataylo1';
 }
 
-$conf['mail_system'] = array('default-system' => 'HelperDebugMailLog');
+// Code to troubleshoot emails sent by Drupal
+#$conf['mail_system'] = array('default-system' => 'HelperDebugMailLog');
 
 //<DDSETTINGS>
 // Please don't edit anything between <DDSETTINGS> tags.
