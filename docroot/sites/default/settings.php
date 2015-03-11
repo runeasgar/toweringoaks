@@ -578,8 +578,8 @@ if (file_exists('/var/www/site-php')) {
 if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
   $files_private_conf_path = conf_path();
   $conf['file_private_path'] = '/mnt/files/' . $_ENV['AH_SITE_GROUP'] . '.' . $_ENV['AH_SITE_ENVIRONMENT'] . '/' . $files_private_conf_path . '/files-private';
-}
-else {
+} else {
+  // Local private files path
   $conf['file_private_path'] = '/Users/joshua.taylor/Sites/devdesktop/private/joshuataylo1';
 }
 
