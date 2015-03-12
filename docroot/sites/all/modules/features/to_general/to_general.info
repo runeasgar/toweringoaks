@@ -27,7 +27,6 @@ dependencies[] = media
 dependencies[] = media_internet
 dependencies[] = navbar
 dependencies[] = node
-dependencies[] = panelizer
 dependencies[] = panels_ipe
 dependencies[] = password_policy
 dependencies[] = pathauto
