@@ -1,0 +1,12 @@
+name = TO Display Modes
+description = Shared display modes.
+core = 7.x
+package = Towering Oaks
+version = 7.x-1.0
+project = to_display_modes
+dependencies[] = ctools
+dependencies[] = ds
+features[ctools][] = ds:ds:1
+features[ds_view_modes][] = banner
+features[ds_view_modes][] = small
+features[features_api][] = api:2
