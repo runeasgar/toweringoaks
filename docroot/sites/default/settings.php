@@ -580,7 +580,7 @@ if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
   $conf['file_private_path'] = '/mnt/files/' . $_ENV['AH_SITE_GROUP'] . '.' . $_ENV['AH_SITE_ENVIRONMENT'] . '/' . $files_private_conf_path . '/files-private';
 } else {
   // Local private files path
-  #$conf['file_private_path'] = '/Users/joshua.taylor/Sites/devdesktop/private/joshuataylo1';
+  $conf['file_private_path'] = '/Users/joshua.taylor/Sites/devdesktop/private/toweringoaks';
 }
 
 // Code to troubleshoot emails sent by Drupal
