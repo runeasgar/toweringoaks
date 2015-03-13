@@ -14,14 +14,14 @@ function to_general_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'acquia_identifier';
-  $strongarm->value = 'DJLY-33176';
+  $strongarm->value = 'EMRZ-70093';
   $export['acquia_identifier'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'acquia_key';
-  $strongarm->value = 'e8766b7ce48cd67406a0b14b5810644e';
+  $strongarm->value = '4fe50e1c55883793667373e5503e6c04';
   $export['acquia_key'] = $strongarm;
 
   $strongarm = new stdClass();

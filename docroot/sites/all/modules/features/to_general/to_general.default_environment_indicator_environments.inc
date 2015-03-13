@@ -15,7 +15,7 @@ function to_general_default_environment_indicator_environment() {
   $environment->api_version = 1;
   $environment->machine = 'dev';
   $environment->name = 'Dev';
-  $environment->regexurl = 'joshuataylo1dev.prod.acquia-sites.com';
+  $environment->regexurl = 'toweringoaksjapycil7c5.devcloud.acquia-sites.com';
   $environment->settings = array(
     'color' => '#000000',
     'text_color' => '#ffffff',
@@ -30,7 +30,7 @@ function to_general_default_environment_indicator_environment() {
   $environment->api_version = 1;
   $environment->machine = 'local';
   $environment->name = 'Local';
-  $environment->regexurl = 'joshuataylo1.dev.dd:8083';
+  $environment->regexurl = 'toweringoaks.dev.dd:8083';
   $environment->settings = array(
     'color' => '#000000',
     'text_color' => '#ffffff',
