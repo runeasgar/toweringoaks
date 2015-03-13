@@ -26,6 +26,7 @@ features[field_instance][] = node-announcement-field_critical
 features[field_instance][] = node-announcement-field_documents
 features[node][] = announcement
 features[page_manager_handlers][] = node_view__announcement
+features[page_manager_pages][] = announcements
 features[rules_config][] = rules_critical_announcement
 features[user_permission][] = create announcement content
 features[user_permission][] = delete any announcement content
