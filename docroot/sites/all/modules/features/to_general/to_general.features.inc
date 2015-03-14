@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function to_general_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
   if ($module == "environment_indicator" && $api == "default_environment_indicator_environments") {
     return array("version" => "1");
   }
