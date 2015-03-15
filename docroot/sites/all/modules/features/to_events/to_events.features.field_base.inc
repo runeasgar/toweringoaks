@@ -45,6 +45,9 @@ function to_events_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_register',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
     'indexes' => array(
       'registration_type' => array(
         0 => 'registration_type',
