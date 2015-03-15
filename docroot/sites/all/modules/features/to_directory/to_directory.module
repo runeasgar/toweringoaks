@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the TO Directory feature.
  */
+
+include_once 'to_directory.features.inc';
