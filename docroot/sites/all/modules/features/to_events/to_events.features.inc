@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function to_events_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "page_manager" && $api == "pages_default") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -40,8 +43,9 @@ function to_events_default_registration_type() {
     "name" : "events",
     "label" : "Events",
     "locked" : "0",
-    "weight" : "0",
+    "default_state" : null,
     "data" : null,
+    "weight" : "0",
     "rdf_mapping" : []
   }');
   return $items;

@@ -291,7 +291,7 @@ function to_events_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'registration',
+        'module' => NULL,
         'settings' => array(
           'label' => ' ',
           'quickedit' => array(
