@@ -22,7 +22,8 @@ function to_classifieds_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'announcements';
+  $handler->display->display_options['title'] = 'classifieds';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'view all';
@@ -148,7 +149,7 @@ function to_classifieds_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['label'] = '';
   $handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['alter']['text'] = 'Interested? Post in the comments ([comment_count]).';
+  $handler->display->display_options['fields']['comment_count']['alter']['text'] = 'Interested? Post in the comments ([comment_count])';
   $handler->display->display_options['fields']['comment_count']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['alter']['path'] = 'node/[nid]#comments';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
@@ -171,72 +172,11 @@ function to_classifieds_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'classified' => 'classified',
   );
-  /* Filter criterion: Content: Classified Category (field_classified_category) */
-  $handler->display->display_options['filters']['field_classified_category_tid']['id'] = 'field_classified_category_tid';
-  $handler->display->display_options['filters']['field_classified_category_tid']['table'] = 'field_data_field_classified_category';
-  $handler->display->display_options['filters']['field_classified_category_tid']['field'] = 'field_classified_category_tid';
-  $handler->display->display_options['filters']['field_classified_category_tid']['value'] = array(
-    3 => '3',
-    4 => '4',
-  );
-  $handler->display->display_options['filters']['field_classified_category_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_classified_category_tid']['expose']['operator_id'] = 'field_classified_category_tid_op';
-  $handler->display->display_options['filters']['field_classified_category_tid']['expose']['label'] = 'Classified Category (field_classified_category)';
-  $handler->display->display_options['filters']['field_classified_category_tid']['expose']['operator'] = 'field_classified_category_tid_op';
-  $handler->display->display_options['filters']['field_classified_category_tid']['expose']['identifier'] = 'field_classified_category_tid';
-  $handler->display->display_options['filters']['field_classified_category_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-  );
-  $handler->display->display_options['filters']['field_classified_category_tid']['group_info']['label'] = 'Classified Category (field_classified_category)';
-  $handler->display->display_options['filters']['field_classified_category_tid']['group_info']['identifier'] = 'field_classified_category_tid';
-  $handler->display->display_options['filters']['field_classified_category_tid']['group_info']['remember'] = FALSE;
-  $handler->display->display_options['filters']['field_classified_category_tid']['group_info']['group_items'] = array(
-    1 => array(),
-    2 => array(),
-    3 => array(),
-  );
-  $handler->display->display_options['filters']['field_classified_category_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_classified_category_tid']['vocabulary'] = 'classified_categories';
-  /* Filter criterion: Content: Classified Type (field_classified_type) */
-  $handler->display->display_options['filters']['field_classified_type_value']['id'] = 'field_classified_type_value';
-  $handler->display->display_options['filters']['field_classified_type_value']['table'] = 'field_data_field_classified_type';
-  $handler->display->display_options['filters']['field_classified_type_value']['field'] = 'field_classified_type_value';
-  $handler->display->display_options['filters']['field_classified_type_value']['value'] = array(
-    'all' => 'all',
-    'offering' => 'offering',
-    'need' => 'need',
-  );
-  $handler->display->display_options['filters']['field_classified_type_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_classified_type_value']['expose']['operator_id'] = 'field_classified_type_value_op';
-  $handler->display->display_options['filters']['field_classified_type_value']['expose']['label'] = 'View offerings or needs?';
-  $handler->display->display_options['filters']['field_classified_type_value']['expose']['operator'] = 'field_classified_type_value_op';
-  $handler->display->display_options['filters']['field_classified_type_value']['expose']['identifier'] = 'field_classified_type_value';
-  $handler->display->display_options['filters']['field_classified_type_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
 
   /* Display: All */
   $handler = $view->new_display('block', 'All', 'all');
   $handler->display->display_options['defaults']['title'] = FALSE;
-
-  /* Display: Small */
-  $handler = $view->new_display('block', 'Small', 'small');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'new classifieds';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -254,6 +194,53 @@ function to_classifieds_views_default_views() {
     'classified' => 'classified',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Classified Category (field_classified_category) */
+  $handler->display->display_options['filters']['field_classified_category_tid']['id'] = 'field_classified_category_tid';
+  $handler->display->display_options['filters']['field_classified_category_tid']['table'] = 'field_data_field_classified_category';
+  $handler->display->display_options['filters']['field_classified_category_tid']['field'] = 'field_classified_category_tid';
+  $handler->display->display_options['filters']['field_classified_category_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_classified_category_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_classified_category_tid']['expose']['operator_id'] = 'field_classified_category_tid_op';
+  $handler->display->display_options['filters']['field_classified_category_tid']['expose']['label'] = 'Category';
+  $handler->display->display_options['filters']['field_classified_category_tid']['expose']['operator'] = 'field_classified_category_tid_op';
+  $handler->display->display_options['filters']['field_classified_category_tid']['expose']['identifier'] = 'field_classified_category_tid';
+  $handler->display->display_options['filters']['field_classified_category_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_classified_category_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_classified_category_tid']['vocabulary'] = 'classified_categories';
+  /* Filter criterion: Content: Classified Type (field_classified_type) */
+  $handler->display->display_options['filters']['field_classified_type_value']['id'] = 'field_classified_type_value';
+  $handler->display->display_options['filters']['field_classified_type_value']['table'] = 'field_data_field_classified_type';
+  $handler->display->display_options['filters']['field_classified_type_value']['field'] = 'field_classified_type_value';
+  $handler->display->display_options['filters']['field_classified_type_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_classified_type_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_classified_type_value']['expose']['operator_id'] = 'field_classified_type_value_op';
+  $handler->display->display_options['filters']['field_classified_type_value']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_classified_type_value']['expose']['operator'] = 'field_classified_type_value_op';
+  $handler->display->display_options['filters']['field_classified_type_value']['expose']['identifier'] = 'field_classified_type_value';
+  $handler->display->display_options['filters']['field_classified_type_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+
+  /* Display: Small */
+  $handler = $view->new_display('block', 'Small', 'small');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'new classifieds';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $export['classifieds'] = $view;
 
   return $export;
