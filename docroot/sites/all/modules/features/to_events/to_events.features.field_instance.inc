@@ -444,13 +444,62 @@ function to_events_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'registration-events-field_guests'
+  $field_instances['registration-events-field_guests'] = array(
+    'bundle' => 'events',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Are you bringing any unregistered guests to this event? If so, how many?',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_guests',
+    'label' => 'Guests',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 1,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
+  t('Are you bringing any unregistered guests to this event? If so, how many?');
   t('Attachments');
   t('Attendance Recommended');
   t('Body');
   t('Comment');
   t('Documents');
+  t('Guests');
   t('House');
   t('If the event takes place at a subdivision residence, select the resident that is hosting.');
   t('If this event is not taking place at a subdivision residence, you may enter its location information here.');
