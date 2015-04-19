@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * to_events.views_default.inc
+ * to_classifieds.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function to_events_views_default_views() {
+function to_classifieds_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'events';
+  $view->name = 'classifieds';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Events';
+  $view->human_name = 'Classifieds';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -61,11 +61,6 @@ function to_events_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['inline'] = array(
-    'comment_count' => 'comment_count',
-    'field_register' => 'field_register',
-  );
-  $handler->display->display_options['row_options']['separator'] = ' ';
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
@@ -124,30 +119,18 @@ function to_events_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Posted by, created';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Posted by <a href="/user/[uid]">[field_first_name] [field_last_name]</a> [created]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Content: Schedule */
-  $handler->display->display_options['fields']['field_schedule_with_time']['id'] = 'field_schedule_with_time';
-  $handler->display->display_options['fields']['field_schedule_with_time']['table'] = 'field_data_field_schedule_with_time';
-  $handler->display->display_options['fields']['field_schedule_with_time']['field'] = 'field_schedule_with_time';
-  $handler->display->display_options['fields']['field_schedule_with_time']['label'] = '';
-  $handler->display->display_options['fields']['field_schedule_with_time']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_schedule_with_time']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Field: Content: Chair */
-  $handler->display->display_options['fields']['field_user']['id'] = 'field_user';
-  $handler->display->display_options['fields']['field_user']['table'] = 'field_data_field_user';
-  $handler->display->display_options['fields']['field_user']['field'] = 'field_user';
-  $handler->display->display_options['fields']['field_user']['label'] = 'Hosted at house';
-  $handler->display->display_options['fields']['field_user']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_user']['settings'] = array(
-    'link' => 1,
+  /* Field: Content: Cost */
+  $handler->display->display_options['fields']['field_cost']['id'] = 'field_cost';
+  $handler->display->display_options['fields']['field_cost']['table'] = 'field_data_field_cost';
+  $handler->display->display_options['fields']['field_cost']['field'] = 'field_cost';
+  $handler->display->display_options['fields']['field_cost']['label'] = 'Price';
+  $handler->display->display_options['fields']['field_cost']['settings'] = array(
+    'thousand_separator' => ' ',
+    'decimal_separator' => '.',
+    'scale' => '0',
+    'prefix_suffix' => 1,
   );
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
@@ -165,20 +148,10 @@ function to_events_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['label'] = '';
   $handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['alter']['text'] = 'Comments ([comment_count])';
+  $handler->display->display_options['fields']['comment_count']['alter']['text'] = 'Interested? Post a comment.';
   $handler->display->display_options['fields']['comment_count']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['comment_count']['alter']['path'] = 'node/[nid]#comments';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
-  /* Field: Content: Register */
-  $handler->display->display_options['fields']['field_register']['id'] = 'field_register';
-  $handler->display->display_options['fields']['field_register']['table'] = 'field_data_field_register';
-  $handler->display->display_options['fields']['field_register']['field'] = 'field_register';
-  $handler->display->display_options['fields']['field_register']['label'] = '';
-  $handler->display->display_options['fields']['field_register']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_register']['type'] = 'registration_link';
-  $handler->display->display_options['fields']['field_register']['settings'] = array(
-    'label' => 'Register for this event',
-  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -196,7 +169,60 @@ function to_events_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'event' => 'event',
+    'classified' => 'classified',
+  );
+  /* Filter criterion: Content: Classified Category (field_classified_category) */
+  $handler->display->display_options['filters']['field_classified_category_tid']['id'] = 'field_classified_category_tid';
+  $handler->display->display_options['filters']['field_classified_category_tid']['table'] = 'field_data_field_classified_category';
+  $handler->display->display_options['filters']['field_classified_category_tid']['field'] = 'field_classified_category_tid';
+  $handler->display->display_options['filters']['field_classified_category_tid']['value'] = array(
+    3 => '3',
+    4 => '4',
+  );
+  $handler->display->display_options['filters']['field_classified_category_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_classified_category_tid']['expose']['operator_id'] = 'field_classified_category_tid_op';
+  $handler->display->display_options['filters']['field_classified_category_tid']['expose']['label'] = 'Classified Category (field_classified_category)';
+  $handler->display->display_options['filters']['field_classified_category_tid']['expose']['operator'] = 'field_classified_category_tid_op';
+  $handler->display->display_options['filters']['field_classified_category_tid']['expose']['identifier'] = 'field_classified_category_tid';
+  $handler->display->display_options['filters']['field_classified_category_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_classified_category_tid']['group_info']['label'] = 'Classified Category (field_classified_category)';
+  $handler->display->display_options['filters']['field_classified_category_tid']['group_info']['identifier'] = 'field_classified_category_tid';
+  $handler->display->display_options['filters']['field_classified_category_tid']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['field_classified_category_tid']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
+  $handler->display->display_options['filters']['field_classified_category_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_classified_category_tid']['vocabulary'] = 'classified_categories';
+  /* Filter criterion: Content: Classified Type (field_classified_type) */
+  $handler->display->display_options['filters']['field_classified_type_value']['id'] = 'field_classified_type_value';
+  $handler->display->display_options['filters']['field_classified_type_value']['table'] = 'field_data_field_classified_type';
+  $handler->display->display_options['filters']['field_classified_type_value']['field'] = 'field_classified_type_value';
+  $handler->display->display_options['filters']['field_classified_type_value']['value'] = array(
+    'all' => 'all',
+    'offering' => 'offering',
+    'need' => 'need',
+  );
+  $handler->display->display_options['filters']['field_classified_type_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_classified_type_value']['expose']['operator_id'] = 'field_classified_type_value_op';
+  $handler->display->display_options['filters']['field_classified_type_value']['expose']['label'] = 'View offerings or needs?';
+  $handler->display->display_options['filters']['field_classified_type_value']['expose']['operator'] = 'field_classified_type_value_op';
+  $handler->display->display_options['filters']['field_classified_type_value']['expose']['identifier'] = 'field_classified_type_value';
+  $handler->display->display_options['filters']['field_classified_type_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
   );
 
   /* Display: All */
@@ -206,12 +232,29 @@ function to_events_views_default_views() {
   /* Display: Small */
   $handler = $view->new_display('block', 'Small', 'small');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'upcoming events';
+  $handler->display->display_options['title'] = 'new classifieds';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $export['events'] = $view;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'classified' => 'classified',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $export['classifieds'] = $view;
 
   return $export;
 }
