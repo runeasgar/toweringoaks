@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the TO Home feature.
+ */
+
+include_once 'to_home.features.inc';

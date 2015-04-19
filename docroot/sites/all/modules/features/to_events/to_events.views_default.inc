@@ -61,6 +61,11 @@ function to_events_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'comment_count' => 'comment_count',
+    'field_register' => 'field_register',
+  );
+  $handler->display->display_options['row_options']['separator'] = ' ';
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
@@ -119,8 +124,31 @@ function to_events_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Posted by, created';
   $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Posted by <a href="/user/[uid]">[field_first_name] [field_last_name]</a> [created]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Content: Schedule */
+  $handler->display->display_options['fields']['field_schedule_with_time']['id'] = 'field_schedule_with_time';
+  $handler->display->display_options['fields']['field_schedule_with_time']['table'] = 'field_data_field_schedule_with_time';
+  $handler->display->display_options['fields']['field_schedule_with_time']['field'] = 'field_schedule_with_time';
+  $handler->display->display_options['fields']['field_schedule_with_time']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_with_time']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_with_time']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: House */
+  $handler->display->display_options['fields']['field_user']['id'] = 'field_user';
+  $handler->display->display_options['fields']['field_user']['table'] = 'field_data_field_user';
+  $handler->display->display_options['fields']['field_user']['field'] = 'field_user';
+  $handler->display->display_options['fields']['field_user']['label'] = 'Hosted at house';
+  $handler->display->display_options['fields']['field_user']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user']['settings'] = array(
+    'link' => 1,
+  );
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -141,6 +169,16 @@ function to_events_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+  /* Field: Content: Register */
+  $handler->display->display_options['fields']['field_register']['id'] = 'field_register';
+  $handler->display->display_options['fields']['field_register']['table'] = 'field_data_field_register';
+  $handler->display->display_options['fields']['field_register']['field'] = 'field_register';
+  $handler->display->display_options['fields']['field_register']['label'] = '';
+  $handler->display->display_options['fields']['field_register']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_register']['type'] = 'registration_link';
+  $handler->display->display_options['fields']['field_register']['settings'] = array(
+    'label' => 'Register for this event',
+  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -158,68 +196,17 @@ function to_events_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'announcement' => 'announcement',
+    'event' => 'event',
   );
 
   /* Display: All */
   $handler = $view->new_display('block', 'All', 'all');
   $handler->display->display_options['defaults']['title'] = FALSE;
 
-  /* Display: Critical */
-  $handler = $view->new_display('block', 'Critical', 'critical');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '300',
-  );
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'announcement' => 'announcement',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Critical (field_critical) */
-  $handler->display->display_options['filters']['field_critical_value']['id'] = 'field_critical_value';
-  $handler->display->display_options['filters']['field_critical_value']['table'] = 'field_data_field_critical';
-  $handler->display->display_options['filters']['field_critical_value']['field'] = 'field_critical_value';
-  $handler->display->display_options['filters']['field_critical_value']['value'] = array(
-    1 => '1',
-  );
-
   /* Display: Small */
   $handler = $view->new_display('block', 'Small', 'small');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'recent announcements';
+  $handler->display->display_options['title'] = 'upcoming events';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
