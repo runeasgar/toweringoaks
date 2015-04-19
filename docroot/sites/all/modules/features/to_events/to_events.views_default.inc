@@ -134,7 +134,7 @@ function to_events_views_default_views() {
   $handler->display->display_options['fields']['field_schedule_with_time']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_with_time']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_with_time']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'medium',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -167,7 +167,7 @@ function to_events_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['alter']['text'] = 'Comments ([comment_count])';
   $handler->display->display_options['fields']['comment_count']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['comment_count']['alter']['path'] = 'node/[nid]#comments';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   /* Field: Content: Register */
   $handler->display->display_options['fields']['field_register']['id'] = 'field_register';
