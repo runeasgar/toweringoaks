@@ -18,7 +18,7 @@ function to_plots_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'location_cck',
         'settings' => array(
           'quickedit' => array(
@@ -60,14 +60,8 @@ function to_plots_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-          'quickedit' => array(
-            'editor' => 'form',
-          ),
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -79,7 +73,7 @@ function to_plots_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_users',
-    'label' => 'Residents',
+    'label' => '(DEFUNCT) Residents',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -99,8 +93,8 @@ function to_plots_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('(DEFUNCT) Residents');
   t('Location');
-  t('Residents');
 
   return $field_instances;
 }

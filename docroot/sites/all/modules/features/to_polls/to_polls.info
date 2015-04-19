@@ -5,6 +5,7 @@ package = Towering Oaks
 version = 7.x-1.0
 project = to_polls
 dependencies[] = ctools
+dependencies[] = poll
 dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
