@@ -204,6 +204,7 @@ function to_documents_views_default_views() {
     5 => 0,
     6 => 0,
   );
+  $handler->display->display_options['filters']['field_document_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_document_category_tid']['vocabulary'] = 'document_categories';
 
   /* Display: All */
