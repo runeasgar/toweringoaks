@@ -166,6 +166,8 @@ function to_directory_views_default_views() {
 
   /* Display: Featured */
   $handler = $view->new_display('block', 'Featured', 'featured');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'featured member';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';

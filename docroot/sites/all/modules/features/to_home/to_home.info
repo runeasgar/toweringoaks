@@ -11,5 +11,5 @@ features[ctools][] = page_manager:pages_default:1
 features[ctools][] = panels_mini:panels_default:1
 features[features_api][] = api:2
 features[page_manager_pages][] = home
-features[panels_mini][] = home_bottom_right
-features[panels_mini][] = home_top_right
+features[panels_mini][] = home_1
+features[panels_mini][] = home_2
