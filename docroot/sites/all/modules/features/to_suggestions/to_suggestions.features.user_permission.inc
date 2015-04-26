@@ -66,5 +66,27 @@ function to_suggestions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'flag vote_for_suggestion'.
+  $permissions['flag vote_for_suggestion'] = array(
+    'name' => 'flag vote_for_suggestion',
+    'roles' => array(
+      'board member' => 'board member',
+      'hoa member' => 'hoa member',
+      'resident' => 'resident',
+    ),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'unflag vote_for_suggestion'.
+  $permissions['unflag vote_for_suggestion'] = array(
+    'name' => 'unflag vote_for_suggestion',
+    'roles' => array(
+      'board member' => 'board member',
+      'hoa member' => 'hoa member',
+      'resident' => 'resident',
+    ),
+    'module' => 'flag',
+  );
+
   return $permissions;
 }
