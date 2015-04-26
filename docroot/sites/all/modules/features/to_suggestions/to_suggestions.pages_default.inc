@@ -358,7 +358,7 @@ function to_suggestions_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'documents';
+  $display->title = 'suggestions';
   $display->uuid = '27accf0a-1494-400f-8c6e-04e0b8458c1d';
   $display->content = array();
   $display->panels = array();
