@@ -22,6 +22,14 @@ function to_general_context_default_contexts() {
         1 => 1,
       ),
     ),
+    'user' => array(
+      'values' => array(
+        'administrator' => 'administrator',
+        'board member' => 'board member',
+        'hoa member' => 'hoa member',
+        'resident' => 'resident',
+      ),
+    ),
   );
   $context->reactions = array(
     'block' => array(
