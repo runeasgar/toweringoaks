@@ -7,3 +7,8 @@
  *
  * - Read the _README file in this directory, it contains useful help and other information.
  */
+
+/* Fix for 3x33 mini panel in AT one-column panel */
+.one-column .three-3x33 .region {
+	clear: none;
+}
