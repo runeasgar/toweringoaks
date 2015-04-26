@@ -21,7 +21,7 @@ function to_home_default_panels_mini() {
   $mini->contexts = array();
   $mini->relationships = array();
   $display = new panels_display();
-  $display->layout = 'threecol_33_34_33';
+  $display->layout = 'three_3x33';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -43,7 +43,7 @@ function to_home_default_panels_mini() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-2540b083-57cb-474e-820b-eff95119a6d7';
-    $pane->panel = 'left';
+    $pane->panel = 'three_33_first';
     $pane->type = 'views';
     $pane->subtype = 'announcements';
     $pane->shown = TRUE;
@@ -75,10 +75,10 @@ function to_home_default_panels_mini() {
     $pane->locks = array();
     $pane->uuid = '2540b083-57cb-474e-820b-eff95119a6d7';
     $display->content['new-2540b083-57cb-474e-820b-eff95119a6d7'] = $pane;
-    $display->panels['left'][0] = 'new-2540b083-57cb-474e-820b-eff95119a6d7';
+    $display->panels['three_33_first'][0] = 'new-2540b083-57cb-474e-820b-eff95119a6d7';
     $pane = new stdClass();
     $pane->pid = 'new-ba54e275-83b4-44a4-9bb4-b6ac68aad892';
-    $pane->panel = 'middle';
+    $pane->panel = 'three_33_second';
     $pane->type = 'views';
     $pane->subtype = 'events';
     $pane->shown = TRUE;
@@ -110,10 +110,10 @@ function to_home_default_panels_mini() {
     $pane->locks = array();
     $pane->uuid = 'ba54e275-83b4-44a4-9bb4-b6ac68aad892';
     $display->content['new-ba54e275-83b4-44a4-9bb4-b6ac68aad892'] = $pane;
-    $display->panels['middle'][0] = 'new-ba54e275-83b4-44a4-9bb4-b6ac68aad892';
+    $display->panels['three_33_second'][0] = 'new-ba54e275-83b4-44a4-9bb4-b6ac68aad892';
     $pane = new stdClass();
     $pane->pid = 'new-b41c7aaa-d028-4f6c-8dc6-14212915a60b';
-    $pane->panel = 'right';
+    $pane->panel = 'three_33_third';
     $pane->type = 'views';
     $pane->subtype = 'classifieds';
     $pane->shown = TRUE;
@@ -145,7 +145,7 @@ function to_home_default_panels_mini() {
     $pane->locks = array();
     $pane->uuid = 'b41c7aaa-d028-4f6c-8dc6-14212915a60b';
     $display->content['new-b41c7aaa-d028-4f6c-8dc6-14212915a60b'] = $pane;
-    $display->panels['right'][0] = 'new-b41c7aaa-d028-4f6c-8dc6-14212915a60b';
+    $display->panels['three_33_third'][0] = 'new-b41c7aaa-d028-4f6c-8dc6-14212915a60b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-2540b083-57cb-474e-820b-eff95119a6d7';
   $mini->display = $display;
@@ -162,7 +162,7 @@ function to_home_default_panels_mini() {
   $mini->contexts = array();
   $mini->relationships = array();
   $display = new panels_display();
-  $display->layout = 'threecol_33_34_33';
+  $display->layout = 'three_3x33';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -181,7 +181,7 @@ function to_home_default_panels_mini() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-cf228756-d1a6-4787-92e0-53d530325276';
-    $pane->panel = 'right';
+    $pane->panel = 'three_33_third';
     $pane->type = 'views';
     $pane->subtype = 'directory';
     $pane->shown = TRUE;
@@ -213,7 +213,7 @@ function to_home_default_panels_mini() {
     $pane->locks = array();
     $pane->uuid = 'cf228756-d1a6-4787-92e0-53d530325276';
     $display->content['new-cf228756-d1a6-4787-92e0-53d530325276'] = $pane;
-    $display->panels['right'][0] = 'new-cf228756-d1a6-4787-92e0-53d530325276';
+    $display->panels['three_33_third'][0] = 'new-cf228756-d1a6-4787-92e0-53d530325276';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-cf228756-d1a6-4787-92e0-53d530325276';
   $mini->display = $display;
