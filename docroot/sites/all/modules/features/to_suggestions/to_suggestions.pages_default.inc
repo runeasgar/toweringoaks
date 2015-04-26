@@ -64,6 +64,29 @@ function to_suggestions_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-1ddd2889-e03f-4354-81db-5b20ea58cbc7';
+    $pane->panel = 'three_25_50_25_first';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-suggestions';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '1ddd2889-e03f-4354-81db-5b20ea58cbc7';
+    $display->content['new-1ddd2889-e03f-4354-81db-5b20ea58cbc7'] = $pane;
+    $display->panels['three_25_50_25_first'][0] = 'new-1ddd2889-e03f-4354-81db-5b20ea58cbc7';
+    $pane = new stdClass();
     $pane->pid = 'new-baaf205d-39fa-43c7-8a8b-36e91942f909';
     $pane->panel = 'three_25_50_25_second';
     $pane->type = 'entity_field_extra';
@@ -262,4 +285,170 @@ function to_suggestions_default_page_manager_handlers() {
   $export['node_view__suggestion'] = $handler;
 
   return $export;
+}
+
+/**
+ * Implements hook_default_page_manager_pages().
+ */
+function to_suggestions_default_page_manager_pages() {
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'suggestions';
+  $page->task = 'page';
+  $page->admin_title = 'Suggestions';
+  $page->admin_description = '';
+  $page->path = 'suggestions';
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'none',
+    'title' => 'Announcements',
+    'name' => 'main-menu',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_suggestions__panel_context_04db77bd-66de-41cc-980e-c59db9b0a6f2';
+  $handler->task = 'page';
+  $handler->subtask = 'suggestions';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Suggestions',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+  );
+  $display = new panels_display();
+  $display->layout = 'three_25_50_25';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'two_33_66_top' => NULL,
+      'two_33_66_first' => NULL,
+      'two_33_66_second' => NULL,
+      'two_33_66_bottom' => NULL,
+      'one_main' => NULL,
+      'three_25_50_25_top' => NULL,
+      'three_25_50_25_first' => NULL,
+      'three_25_50_25_second' => NULL,
+      'three_25_50_25_third' => NULL,
+      'three_25_50_25_bottom' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'documents';
+  $display->uuid = '27accf0a-1494-400f-8c6e-04e0b8458c1d';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-163c4e12-574f-4b37-b94f-8d3d5971c96c';
+    $pane->panel = 'three_25_50_25_first';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-hoa';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '163c4e12-574f-4b37-b94f-8d3d5971c96c';
+    $display->content['new-163c4e12-574f-4b37-b94f-8d3d5971c96c'] = $pane;
+    $display->panels['three_25_50_25_first'][0] = 'new-163c4e12-574f-4b37-b94f-8d3d5971c96c';
+    $pane = new stdClass();
+    $pane->pid = 'new-762789d3-bdc4-4376-bb89-95f125d43036';
+    $pane->panel = 'three_25_50_25_first';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-suggestions';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '762789d3-bdc4-4376-bb89-95f125d43036';
+    $display->content['new-762789d3-bdc4-4376-bb89-95f125d43036'] = $pane;
+    $display->panels['three_25_50_25_first'][1] = 'new-762789d3-bdc4-4376-bb89-95f125d43036';
+    $pane = new stdClass();
+    $pane->pid = 'new-6d0bc610-44b8-4f53-808e-0e8192dd421d';
+    $pane->panel = 'three_25_50_25_second';
+    $pane->type = 'views';
+    $pane->subtype = 'suggestions';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 1,
+      'nodes_per_page' => '10',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'all',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '6d0bc610-44b8-4f53-808e-0e8192dd421d';
+    $display->content['new-6d0bc610-44b8-4f53-808e-0e8192dd421d'] = $pane;
+    $display->panels['three_25_50_25_second'][0] = 'new-6d0bc610-44b8-4f53-808e-0e8192dd421d';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['suggestions'] = $page;
+
+  return $pages;
+
 }
