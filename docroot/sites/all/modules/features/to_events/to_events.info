@@ -39,6 +39,7 @@ features[menu_links][] = menu-events_upcoming-events:events
 features[node][] = event
 features[page_manager_handlers][] = node_view__event
 features[page_manager_pages][] = events
+features[page_manager_pages][] = events_archive
 features[registration_type][] = events
 features[rules_config][] = rules_event_with_attendance_recommended
 features[user_permission][] = administer own events registration
