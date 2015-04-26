@@ -294,3 +294,327 @@ function to_projects_default_page_manager_handlers() {
 
   return $export;
 }
+
+/**
+ * Implements hook_default_page_manager_pages().
+ */
+function to_projects_default_page_manager_pages() {
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'projects';
+  $page->task = 'page';
+  $page->admin_title = 'Projects';
+  $page->admin_description = '';
+  $page->path = 'projects';
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'none',
+    'title' => 'Announcements',
+    'name' => 'main-menu',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_projects__panel_context_dc16bd47-5454-42ab-ae75-0cb10fbf5094';
+  $handler->task = 'page';
+  $handler->subtask = 'projects';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Projects',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+  );
+  $display = new panels_display();
+  $display->layout = 'three_25_50_25';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'two_33_66_top' => NULL,
+      'two_33_66_first' => NULL,
+      'two_33_66_second' => NULL,
+      'two_33_66_bottom' => NULL,
+      'one_main' => NULL,
+      'three_25_50_25_top' => NULL,
+      'three_25_50_25_first' => NULL,
+      'three_25_50_25_second' => NULL,
+      'three_25_50_25_third' => NULL,
+      'three_25_50_25_bottom' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'current projects';
+  $display->uuid = '27accf0a-1494-400f-8c6e-04e0b8458c1d';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-163c4e12-574f-4b37-b94f-8d3d5971c96c';
+    $pane->panel = 'three_25_50_25_first';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-hoa';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '163c4e12-574f-4b37-b94f-8d3d5971c96c';
+    $display->content['new-163c4e12-574f-4b37-b94f-8d3d5971c96c'] = $pane;
+    $display->panels['three_25_50_25_first'][0] = 'new-163c4e12-574f-4b37-b94f-8d3d5971c96c';
+    $pane = new stdClass();
+    $pane->pid = 'new-5308b5a7-6d2e-4102-9199-8c3c2fbd35f3';
+    $pane->panel = 'three_25_50_25_first';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-projects';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '5308b5a7-6d2e-4102-9199-8c3c2fbd35f3';
+    $display->content['new-5308b5a7-6d2e-4102-9199-8c3c2fbd35f3'] = $pane;
+    $display->panels['three_25_50_25_first'][1] = 'new-5308b5a7-6d2e-4102-9199-8c3c2fbd35f3';
+    $pane = new stdClass();
+    $pane->pid = 'new-01676d2e-4746-4c63-8e66-147d1e675cac';
+    $pane->panel = 'three_25_50_25_second';
+    $pane->type = 'views';
+    $pane->subtype = 'projects';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 1,
+      'nodes_per_page' => '10',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'all',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '01676d2e-4746-4c63-8e66-147d1e675cac';
+    $display->content['new-01676d2e-4746-4c63-8e66-147d1e675cac'] = $pane;
+    $display->panels['three_25_50_25_second'][0] = 'new-01676d2e-4746-4c63-8e66-147d1e675cac';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['projects'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'projects_archive';
+  $page->task = 'page';
+  $page->admin_title = 'Projects Archive';
+  $page->admin_description = '';
+  $page->path = 'projects/archive';
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'none',
+    'title' => 'Announcements',
+    'name' => 'main-menu',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_projects_archive__panel_context_89368ab9-4ce4-4b01-a9c4-5b19c1675f86';
+  $handler->task = 'page';
+  $handler->subtask = 'projects_archive';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Projects Archive',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+  );
+  $display = new panels_display();
+  $display->layout = 'three_25_50_25';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'two_33_66_top' => NULL,
+      'two_33_66_first' => NULL,
+      'two_33_66_second' => NULL,
+      'two_33_66_bottom' => NULL,
+      'one_main' => NULL,
+      'three_25_50_25_top' => NULL,
+      'three_25_50_25_first' => NULL,
+      'three_25_50_25_second' => NULL,
+      'three_25_50_25_third' => NULL,
+      'three_25_50_25_bottom' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'current projects';
+  $display->uuid = '27accf0a-1494-400f-8c6e-04e0b8458c1d';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-163c4e12-574f-4b37-b94f-8d3d5971c96c';
+    $pane->panel = 'three_25_50_25_first';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-hoa';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '163c4e12-574f-4b37-b94f-8d3d5971c96c';
+    $display->content['new-163c4e12-574f-4b37-b94f-8d3d5971c96c'] = $pane;
+    $display->panels['three_25_50_25_first'][0] = 'new-163c4e12-574f-4b37-b94f-8d3d5971c96c';
+    $pane = new stdClass();
+    $pane->pid = 'new-5308b5a7-6d2e-4102-9199-8c3c2fbd35f3';
+    $pane->panel = 'three_25_50_25_first';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-projects';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '5308b5a7-6d2e-4102-9199-8c3c2fbd35f3';
+    $display->content['new-5308b5a7-6d2e-4102-9199-8c3c2fbd35f3'] = $pane;
+    $display->panels['three_25_50_25_first'][1] = 'new-5308b5a7-6d2e-4102-9199-8c3c2fbd35f3';
+    $pane = new stdClass();
+    $pane->pid = 'new-7742b291-0557-4b1a-88b8-8ef98dacf988';
+    $pane->panel = 'three_25_50_25_second';
+    $pane->type = 'views';
+    $pane->subtype = 'projects';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 1,
+      'nodes_per_page' => '10',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'archive',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '7742b291-0557-4b1a-88b8-8ef98dacf988';
+    $display->content['new-7742b291-0557-4b1a-88b8-8ef98dacf988'] = $pane;
+    $display->panels['three_25_50_25_second'][0] = 'new-7742b291-0557-4b1a-88b8-8ef98dacf988';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['projects_archive'] = $page;
+
+  return $pages;
+
+}
