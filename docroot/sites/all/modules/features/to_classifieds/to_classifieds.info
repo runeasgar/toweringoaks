@@ -44,6 +44,7 @@ features[variable][] = comment_default_per_page_classified
 features[variable][] = comment_form_location_classified
 features[variable][] = comment_preview_classified
 features[variable][] = comment_subject_field_classified
+features[variable][] = content_access_classified
 features[variable][] = field_bundle_settings_node__classified
 features[variable][] = menu_options_classified
 features[variable][] = menu_parent_classified

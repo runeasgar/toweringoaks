@@ -28,6 +28,7 @@ features[variable][] = comment_form_location_plot
 features[variable][] = comment_plot
 features[variable][] = comment_preview_plot
 features[variable][] = comment_subject_field_plot
+features[variable][] = content_access_plot
 features[variable][] = field_bundle_settings_node__plot
 features[variable][] = menu_options_plot
 features[variable][] = menu_parent_plot

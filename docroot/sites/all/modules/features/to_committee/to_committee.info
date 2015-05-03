@@ -24,6 +24,7 @@ features[variable][] = comment_default_per_page_committee
 features[variable][] = comment_form_location_committee
 features[variable][] = comment_preview_committee
 features[variable][] = comment_subject_field_committee
+features[variable][] = content_access_committee
 features[variable][] = field_bundle_settings_node__committee
 features[variable][] = menu_options_committee
 features[variable][] = menu_parent_committee
