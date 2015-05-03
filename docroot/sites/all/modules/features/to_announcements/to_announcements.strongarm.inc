@@ -65,9 +65,7 @@ function to_announcements_strongarm() {
   $strongarm->name = 'content_access_announcement';
   $strongarm->value = array(
     'view_own' => array(
-      0 => 1,
-      1 => 2,
-      2 => 3,
+      0 => 3,
     ),
     'view' => array(
       0 => 4,
